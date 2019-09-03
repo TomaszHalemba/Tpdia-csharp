@@ -1,0 +1,7 @@
+E:\Magisterka\tpdia\projekt_csharp\FuelSupply\FuelSupply\bin\Debug\FuelSupply.exe.config
+E:\Magisterka\tpdia\projekt_csharp\FuelSupply\FuelSupply\bin\Debug\FuelSupply.exe
+E:\Magisterka\tpdia\projekt_csharp\FuelSupply\FuelSupply\bin\Debug\FuelSupply.pdb
+E:\Magisterka\tpdia\projekt_csharp\FuelSupply\FuelSupply\obj\Debug\FuelSupply.csprojAssemblyReference.cache
+E:\Magisterka\tpdia\projekt_csharp\FuelSupply\FuelSupply\obj\Debug\FuelSupply.csproj.CoreCompileInputs.cache
+E:\Magisterka\tpdia\projekt_csharp\FuelSupply\FuelSupply\obj\Debug\FuelSupply.exe
+E:\Magisterka\tpdia\projekt_csharp\FuelSupply\FuelSupply\obj\Debug\FuelSupply.pdb

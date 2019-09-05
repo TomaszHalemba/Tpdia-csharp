@@ -33,7 +33,7 @@ namespace FuelSupply.Analyzers
         {
             int percent = (int)Math.Floor(list.Count * (double)(extremePercent / 400.0));
             // sortowanie po getVarBasedOnDetected
-            list.Sort((p, q) => p.getVarBasedOnDetected().CompareTo(q.getVarBasedOnDetected()));
+            list.Sort((p, q) => Math.Abs(q.getVarBasedOnDetected()).CompareTo( Math.Abs(p.getVarBasedOnDetected())));
 
 
             for (int a = 0; a < percent; a++)
@@ -41,14 +41,14 @@ namespace FuelSupply.Analyzers
                 list.RemoveAt(a);
             }
 
-            list.Sort((p, q) => p.getVarBasedOnDetectedNet().CompareTo(q.getVarBasedOnDetectedNet()));
+            list.Sort((p, q) => Math.Abs(q.getVarBasedOnDetectedNet()).CompareTo(Math.Abs(p.getVarBasedOnDetectedNet())));
 
 
             for (int a = 0; a < percent; a++)
             {
                 list.RemoveAt(a);
             }
-            list.Sort((p, q) => p.getVarBasedOnHeightNet().CompareTo(q.getVarBasedOnHeightNet()));
+            list.Sort((p, q) => Math.Abs(q.getVarBasedOnHeightNet()).CompareTo(Math.Abs(p.getVarBasedOnHeightNet())));
 
 
             for (int a = 0; a < percent; a++)
@@ -56,7 +56,7 @@ namespace FuelSupply.Analyzers
                 list.RemoveAt(a);
             }
 
-            list.Sort((p, q) => p.getVarBasedOnHeight().CompareTo(q.getVarBasedOnHeight()));
+            list.Sort((p, q) => Math.Abs(q.getVarBasedOnHeight()).CompareTo(Math.Abs(p.getVarBasedOnHeight())));
 
 
             for (int a = 0; a < percent; a++)

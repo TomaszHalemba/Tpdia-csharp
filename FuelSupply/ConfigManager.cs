@@ -29,6 +29,17 @@ namespace FuelSupply
         private static Double detectedAndHeightNetMaxDiff;  //maksymalna dopusczalna roznica pomiedzy varem detected a height (Net)
         private static String outputFilePath;               //scieĹĽka folderu do ktĂłrego majÄ… trafiaÄ‡ wyniki
         private static Double extremePercent;               //procent rekordĂłw usuwanych z ekstremalnymi pomiarami
+        public static Double ExtremePercent
+        {
+            get
+            {
+                return extremePercent;
+            }
+            set
+            {
+                extremePercent = value;
+            }
+        }
         private static int dayInterval;                     //interwaĹ‚ dni
 
 
@@ -68,6 +79,19 @@ namespace FuelSupply
                                 if (reader.Read())
                                 {
                                     CsvFilePath = reader.Value.Trim();
+                                }
+                                break;
+                            case "extremePercent":
+                                // Search for the attribute name on this current node.
+                                attribute = reader["name"];
+                                if (attribute != null)
+                                {
+
+                                }
+                                // Next read will contain text.
+                                if (reader.Read())
+                                {
+                                    extremePercent = Double.Parse(reader.Value.Trim());
                                 }
                                 break;
                         }

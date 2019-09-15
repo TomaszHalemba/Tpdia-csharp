@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+	<csvFilePath>Dane dostawy.csv</csvFilePath>
+	<detectedSupplyTolerance>201</detectedSupplyTolerance>
+	<detectedSupplyNetTolerance>202</detectedSupplyNetTolerance>
+	<detectedHeightMaxDiff>501</detectedHeightMaxDiff>
+	<detectedNetHeightMaxDiff>502</detectedNetHeightMaxDiff>
+	<outputFilePath>e:\\hdtemp\\</outputFilePath>
+	<extremePercent>00</extremePercent>
+	<dayInterval>50</dayInterval>
+	<smallValueSample>5</smallValueSample>
+</config>

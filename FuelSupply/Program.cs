@@ -11,7 +11,7 @@ namespace FuelSupply
         static void Main(string[] args)
         {
             Controller controller = new Controller();
-            controller.execute();
+            controller.execute(args[0]);
         }
     }
 }

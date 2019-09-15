@@ -8,7 +8,6 @@ namespace FuelSupply.Model
 {
     class Supply
     {
-        private int id;
         private int stationId;
         private int tankId;
         private String fuelType;
@@ -39,31 +38,25 @@ namespace FuelSupply.Model
         private bool excess;
 
 
-        readonly Double tolerance = 0.05;
-   
-    
-    /**
-     * Default constructor
-     */
-    public Supply(int id)
+        public Supply()
         {
-            this.id = id;
+
         }
 
+        public bool getExcess()
+        {
+            return excess;
+        }
+        public void setExcess(bool excess)
+        {
+            this.excess = excess;
+        }
 
-
-
-
-        /**
-         * Obliczanie var na podstawie wykrytej objÄ™toĹ›ci dostawy
-         */
         public void calculateVarBasedOnDetected()
         {
             try
             {
-
                 VarBasedOnDetected = declaredSupplyCapacity - detectedSupplyCapacity;
-
             }
             catch (Exception e)
             {
@@ -71,9 +64,6 @@ namespace FuelSupply.Model
             }
         }
 
-        /**
-         * Obliczanie var na podstawie wykrytej objÄ™toĹ›ci dostawy przeskalowanej do temperatury referencyjnej
-         */
         public void calculateVarBasedOnDetectedNet()
         {
             try
@@ -87,24 +77,13 @@ namespace FuelSupply.Model
             }
         }
 
-        /**
-         * Obliczanie var na podstawie objÄ™toĹ›ci dostawy obliczonej za pomocÄ… pomiarĂłw wysokoĹ›ci
-         */
-        public void calculateVarBasedOnHeight()//coďż˝ na stacji sie dziaďż˝o
+
+        public void calculateVarBasedOnHeight()
         {
             try
             {
-                // stare
-                //VarBasedOnHeight = (tankCapacity * tankEndHeight / 100.0) - (tankCapacity * tankStartHeight / 100.0) - detectedSupplyCapacity;
-
-                // obliczenie objetosci dostawy na podstawie otrzymanych wysokoĹ›ci
                 double supplyCapacityBasedOnHeight = (tankCapacity * tankEndHeight / 100.0) - (tankCapacity * tankStartHeight / 100.0);
-
-                // obliczenie varu
                 VarBasedOnHeight = this.declaredSupplyCapacity - supplyCapacityBasedOnHeight;
-
-
-
             }
             catch (Exception e)
             {
@@ -112,24 +91,12 @@ namespace FuelSupply.Model
             }
         }
 
-        /**
-         * Obliczanie var na podstawie objÄ™toĹ›ci dostawy obliczonej za pomocÄ… pomiarĂłw wysokoĹ›ci do zadeklarowanej przeskalowanej do temperatury referencyjnej
-         */
-        public void calculateVarBasedOnHeightNet()//coďż˝ na stacji sie dziaďż˝o
+        public void calculateVarBasedOnHeightNet()
         {
             try
             {
-                // stare
-                //VarBasedOnHeight = (tankCapacity * tankEndHeight / 100.0) - (tankCapacity * tankStartHeight / 100.0) - detectedSupplyCapacity;
-
-                // obliczenie objetosci dostawy na podstawie otrzymanych wysokoĹ›ci
                 double supplyCapacityBasedOnHeight = (tankCapacity * tankEndHeight / 100.0) - (tankCapacity * tankStartHeight / 100.0);
-
-                // obliczenie varu
                 VarBasedOnHeightNet = this.declaredSupplyCapacityNet - supplyCapacityBasedOnHeight;
-
-
-
             }
             catch (Exception e)
             {
@@ -169,10 +136,6 @@ namespace FuelSupply.Model
             this.possibleDetectorError = possibleDetectorError;
         }
 
-
-
-
-
         public double getVarBasedOnDetected()
         {
             return VarBasedOnDetected;
@@ -189,7 +152,6 @@ namespace FuelSupply.Model
         {
             return VarBasedOnDetectedNet;
         }
-
 
         public void setVarBasedOnDetectedNet(double varBasedOnDetectedNet)
         {
@@ -208,10 +170,6 @@ namespace FuelSupply.Model
             VarBasedOnHeightNet = varBasedOnHeightNet;
         }
 
-        public int getId()
-        {
-            return id;
-        }
 
         public int getStationId()
         {

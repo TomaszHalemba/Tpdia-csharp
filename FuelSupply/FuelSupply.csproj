@@ -43,10 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Analyzers\DataFiltering.cs" />
+    <Compile Include="Analyzers\RecordAnalyzer.cs" />
+    <Compile Include="Analyzers\RecordAnalyzerManager.cs" />
+    <Compile Include="Analyzers\RecordIntervalAnalyzer.cs" />
+    <Compile Include="Model\DataFiltering.cs" />
     <Compile Include="ConfigManager.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Model\DataAnalyzer.cs" />
+    <Compile Include="Model\DateManager.cs" />
     <Compile Include="Model\FileManager.cs" />
     <Compile Include="Model\Supply.cs" />
     <Compile Include="Program.cs" />
